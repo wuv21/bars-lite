@@ -1,0 +1,16 @@
+<div class="col-xs-3 text-center">
+    <h3>Quadrant {{$id - 2}}</h3>
+    <div class="radio">
+      <label><input type="radio" name="q-info-{{$id}}" value="enabled" ng-model=quads[$id - 1].enabled>Enabled</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="q-info-{{$id}}" value="disabled" ng-model=quads[$id - 1].enabled>Disabled</label>
+    </div>
+
+    <div class="form-group row">
+        <label class="control-label col-md-7"># control rows</label>
+        <div class="col-md-5">
+            <input type="number" min=1 max=10 name="" placeholder="#" size="2" class="form-control" ng-model=quads[$id - 1].ctrlRows">
+        </div>
+    </div>
+</div>

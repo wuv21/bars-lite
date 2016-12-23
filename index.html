@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BARS lite</title>
+
+    <!-- main.css  -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- lodash -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.2/lodash.min.js"></script>
+
+    <!-- angular -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+
+    <!-- script.js -->
+    <script src="js/script.js"></script>
+</head>
+
+<body ng-app="barsLiteApp">
+    <div ng-controller="MainController">
+        <div class="container">
+            <h1>BARS lite</h1>
+        </div>
+
+        <div class="container quadrant-info">
+            <quadinfo></quadinfo>
+            <quadinfo></quadinfo>
+            <quadinfo></quadinfo>
+            <quadinfo></quadinfo>
+        </div>
+
+        <div class="container quadrant-results">
+
+        </div>
+    </div>
+
+</body>
+</html>
