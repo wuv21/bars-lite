@@ -7,9 +7,6 @@
     <!-- main.css  -->
     <link rel="stylesheet" href="css/main.css">
 
-    <!-- lodash -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.2/lodash.min.js"></script>
-
     <!-- angular -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
 
@@ -19,19 +16,58 @@
 
 <body ng-app="barsLiteApp">
     <div ng-controller="MainController">
-        <div class="container">
-            <h1>BARS lite</h1>
+        <div class="container-fluid header">
+            <div class="container">
+                <h1>BARS lite</h1>
+                <p>Welcome to the lite version of biological assay workflow system (BARS). BARS lite can be used to parse values from absorbance files generated during dose susceptibility assays. All absorbance readings are CSV files that must be converted from the XLS files created by the Victor3 plate reader. The parsed values can be copied directly into Prism or Excel for use in regression analyses.</p>
+            </div>
         </div>
 
-        <div class="container quadrant-info">
-            <quadinfo></quadinfo>
-            <quadinfo></quadinfo>
-            <quadinfo></quadinfo>
-            <quadinfo></quadinfo>
+        <div class="container-fluid quadrant-info">
+            <div class="container">
+                <h2>Step 1 - Enter information</h2>
+                <p>Enable quadrants if used and enter the number of control rows (aka rows of no virus controls). Quadrants are ordered clockwise starting from top-left corner.</p>
+                <quadinfo></quadinfo>
+                <quadinfo></quadinfo>
+                <quadinfo></quadinfo>
+                <quadinfo></quadinfo>
+            </div>
         </div>
 
-        <div class="container quadrant-results">
+        <div class="container-fluid quadrant-file">
+            <div class="container">
+                <h2>Step 2 - Enter file</h2>
+                <p>Select CSV file. Must convert from XLS file into CSV prior to submission. Please make sure that the first workbook page is the one converted to CSV.</p>
+                <input type="file" id="fileInput" name="csvFile" valid-file ng-model="absFile" fileread="csvFile" accept=".csv">
+            </div>
+        </div>
 
+        <div class="container-fluid quadrant-submit">
+            <div class="container">
+                <h2>Step 3 - Verify and submit</h2>
+                <p class="btn btn-primary" ng-click="submitPlate()" ng-disabled="!checkValid()">Submit</p>
+            </div>
+        </div>
+
+        <div class="container-fluid quadrant-results">
+            <div class="container">
+                <h2>Results</h2>
+                <p>Parsed values are grouped by quadrant.</p>
+                <div class="col-xs-3" ng-repeat="quad in quadsParsed track by $index">
+                    <h3>Quadrant {{$index + 1}}</h3>
+                    <table class="table table-condensed table-hover">
+                        <tr>
+                            <th>y<sub>0</sub></th>
+                            <th>y<sub>1</sub></th>
+                        </tr>
+
+                        <tr ng-repeat="q in quad">
+                            <td>{{q[0] | number:3}}</td>
+                            <td>{{q[1] | number:3}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 

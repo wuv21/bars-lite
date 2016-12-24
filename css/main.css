@@ -10,16 +10,26 @@ body {
     padding-bottom: 2em;
 }
 
-header {
-    height: 50px;
+.header {
+    padding-top: 2em;
+    padding-bottom: 1em;
+    background-color: rgba(0, 47, 47, 0.5);
+    color: #FFF;
 }
 
 h1, h2, h3 {
     font-weight: 300;
 }
 
+h2 {
+    font=size: 18px;
+    color: #002F2F;
+    border-left: #002F2F solid 2px;
+    padding-left: 0.25em;
+}
+
 h3 {
-    color: #B64926;
+    color: #046380;
 }
 
 h4 {
@@ -29,4 +39,20 @@ h4 {
 .validation-error {
     color: #dd1531;
     font-size: 1em;
+}
+
+.container-fluid {
+    padding-bottom: 1em;
+}
+
+.container-fluid:nth-child(2n) {
+    background-color: #EFEFEF;
+}
+
+.ctrl-row-input {
+    width: 25%;
+    height: 75%;
+    padding: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
 }
