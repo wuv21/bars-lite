@@ -32,7 +32,7 @@ barsLiteApp.controller('MainController', function($scope) {
 
     $scope.quadsParsed = [];
     $scope.submitPlate = function() {
-        var plateParsed = $scope.csvFile.replace(/\r)/g, "").split('\n');
+        var plateParsed = $scope.csvFile.replace(/\r/g, "").split('\n');
         var plateAbs = [];
         var plateQuads = [[], [], [], []];
 
