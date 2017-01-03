@@ -38,6 +38,9 @@
             <div class="container">
                 <h2>Step 2 - Enter file</h2>
                 <p>Select CSV file. Must convert from XLS file into CSV prior to submission. Please make sure that the first workbook page is the one converted to CSV.</p>
+                <div class="alert alert-info">
+                    <p>Please increase the number of digits past the decimal point for the absorbance column prior to exporting. This is needed to increase precision of the calculations.</p>
+                </div>
                 <input type="file" id="fileInput" name="csvFile" valid-file ng-model="absFile" fileread="csvFile" accept=".csv">
             </div>
         </div>
