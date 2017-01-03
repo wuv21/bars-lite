@@ -95,7 +95,7 @@ barsLiteApp.controller('MainController', function($scope) {
                 }
 
                 var noD = (values[0][0] + values[0][1]) / 2;
-                values.slice(0, 1);
+                values = values.slice(0, 1);
 
                 for (var i=0; i<values.length; i++) {
                     values[i][0] = values[i][0] / noD * 100;
@@ -112,9 +112,8 @@ barsLiteApp.directive('quadinfo', function() {
     return {
         restrict: "E",
         scope: true,
-        templateUrl: "/template/quadinfo.html",
+        templateUrl: "template/quadinfo.html",
         link: function(scope) {
-
         }
     }
 });
