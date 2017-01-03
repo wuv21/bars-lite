@@ -32,6 +32,8 @@ barsLiteApp.controller('MainController', function($scope) {
 
     $scope.quadsParsed = [];
     $scope.submitPlate = function() {
+        $scope.quadsParsed = [];
+
         var plateParsed = $scope.csvFile.split('\n');
 
         if (plateParsed.length < 2) {
